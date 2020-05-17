@@ -1,0 +1,138 @@
+/* * { padding: 0; margin: 0; } */
+
+html{
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  height: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.nav {
+  margin-top: 2rem;
+  position: relative;
+  border: 1px solid pink;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav button {
+  width: 25%;
+}
+
+.event-wrap {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  z-index: 1;
+  /* visibility: hidden; */
+  /* opacity: 0; */
+}
+
+.popMore {
+  /* text-align: start; */
+  left: 18%;
+  /* background-color: #d3af37; */
+  
+  padding: 0.5rem 0.75rem;
+}
+
+.popMore::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: 50%;
+  border: 1rem solid;
+  border-color: transparent transparent gold transparent;
+}
+
+.about {
+  color: red;
+}
+
+.popAbout {
+  left: -3%;
+  width: 106%;
+  height: 105%;
+  z-index: -1;
+  background-color: black;
+}
+
+.popAbout::after {
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  border: 1rem solid;
+  border-color: cornflowerblue transparent transparent transparent;
+}
+
+.popContact {
+  color: black;
+  text-align: start;
+  background-color: #d3af37;
+  width: 160%;
+  left: -30%;
+  bottom: 225%;
+  padding: 0.5rem 0.75rem;
+}
+
+.popContact::after {
+  content: "";
+  position: absolute;
+  top: 98%;
+  left: 50%;
+  border: 0.5rem solid;
+  border-color: blueviolet transparent transparent transparent;
+}
+
+.popMore, .popAbout, .popContact {
+  visibility: hidden;
+  position: absolute;
+  border-radius: 0.777rem;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s;
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+  /* visibility: visible;
+  animation: fadeIn 1.5s forwards; */
+}
+
+.hidden {
+  /* visibility: hidden; */
+  animation: fadeOut 1.5s forwards;
+}
+
+
+
+
+
+html,button {
+  font-size: 16px;
+  font-size: 9px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+@keyframes fadeOut {
+  from {opacity: 1;}
+  99% {visibility: visible;}
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
