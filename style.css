@@ -34,15 +34,17 @@ body {
   display: inline-block;
   width: 100%;
   z-index: 1;
-  /* visibility: hidden; */
-  /* opacity: 0; */
 }
 
 .popMore {
-  /* text-align: start; */
-  left: 18%;
-  /* background-color: #d3af37; */
-  
+  /* background-color: #6FB07F; */
+  /* background-color: #001542; */
+  /* background-color: #00ffff; */
+  background-color: #005858;
+  text-align: center;
+  color: #DEB887;
+  /* left: 15%; */
+  right: 28%;
   padding: 0.5rem 0.75rem;
 }
 
@@ -50,21 +52,23 @@ body {
   content: "";
   position: absolute;
   top: -20%;
-  right: 50%;
+  left: 18%;
   border: 1rem solid;
+  /* border-color: transparent transparent gold transparent; */
   border-color: transparent transparent gold transparent;
 }
 
 .about {
-  color: red;
+  color: black;
+  transition: color 0.5s ease-in;
 }
 
 .popAbout {
+  background-color: #001542;
   left: -3%;
   width: 106%;
   height: 105%;
   z-index: -1;
-  background-color: black;
 }
 
 .popAbout::after {
@@ -78,7 +82,9 @@ body {
 .popContact {
   color: black;
   text-align: start;
-  background-color: #d3af37;
+  /* background-color: #d3af37; */
+  /* background-color: #ff9f1c; */
+  background-color: #FFC233;
   width: 160%;
   left: -30%;
   bottom: 225%;
@@ -95,44 +101,42 @@ body {
 }
 
 .popMore, .popAbout, .popContact {
-  visibility: hidden;
   position: absolute;
   border-radius: 0.777rem;
+  visibility: hidden;
   opacity: 0;
-  transition: visibility 1s, opacity 1s;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
 }
 
 .active {
   visibility: visible;
   opacity: 1;
-  /* visibility: visible;
-  animation: fadeIn 1.5s forwards; */
 }
 
-.hidden {
-  /* visibility: hidden; */
-  animation: fadeOut 1.5s forwards;
+.aboutt {
+  /* color: white; */
+  color: #FFECBE;
+
+  /* color: black; */
 }
 
+.foo{
+  animation: foo 1.5s ease-in-out forwards;
+}
 
-
-
+@keyframes foo {
+  from { 
+    color: inherit;
+  }
+  50%{ 
+    color: red;
+  }
+  to {
+    color: inherit;
+  }
+}
 
 html,button {
   font-size: 16px;
-  font-size: 9px;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-
-@keyframes fadeOut {
-  from {opacity: 1;}
-  99% {visibility: visible;}
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
+  /* font-size: 9px; */
 }
