@@ -55,7 +55,7 @@ body {
   left: 18%;
   border: 1rem solid;
   /* border-color: transparent transparent gold transparent; */
-  border-color: transparent transparent gold transparent;
+  border-color: transparent transparent #005858 transparent;
 }
 
 .about {
@@ -94,17 +94,20 @@ body {
 .popContact::after {
   content: "";
   position: absolute;
-  top: 98%;
+  top: 100%;
   left: 50%;
   border: 0.5rem solid;
-  border-color: blueviolet transparent transparent transparent;
+  border-color: #FFC233 transparent transparent transparent;
 }
 
 .popMore, .popAbout, .popContact {
   position: absolute;
+  /* -moz-border-radius: 0.777rem;
+  -webkit-border-radius: 0.777rem; */
   border-radius: 0.777rem;
   visibility: hidden;
   opacity: 0;
+  /* -moz-transition: visibility 0.3s, opacity 0.3s ease-in; */
   transition: visibility 0.3s, opacity 0.3s ease-in;
 }
 

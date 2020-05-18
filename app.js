@@ -3,16 +3,20 @@
   var app = (function (doc) {
     var eventIs = false;
 
+    var toggleAnimations = function () {
+      doc.querySelector('.about').classList.remove('aboutt');
+      doc.querySelectorAll('.message').forEach(function (span) {
+        span.classList.remove('foo');
+      });
+    };
+
     var closeAll = function () {
       var eventWrap = doc.querySelectorAll('.event-wrap');
       eventWrap.forEach(function (ele) {
         ele.firstElementChild.classList.remove('active');
       });
-      doc.querySelector('.about').classList.remove('aboutt');
-      doc.querySelectorAll('.message').forEach(function (span) {
-        span.classList.remove('foo');
-      });
-
+      toggleAnimations();
+      
       eventIs = false;
     };
     
@@ -23,10 +27,7 @@
         case 'popContact':
           if (eventIs && eventIs !== eleId) {
             doc.querySelector('.' + eventIs).classList.remove('active');
-            doc.querySelector('.about').classList.remove('aboutt');
-            doc.querySelectorAll('.message').forEach(function (span) {
-              span.classList.remove('foo');
-            });
+            toggleAnimations();
           }
           if (!eventIs || true) {
             doc.querySelector('.' + eleId).classList.toggle('active');
