@@ -4,16 +4,16 @@
     var eventIs = false;
 
     var toggleAnimations = function () {
-      doc.querySelector('.about').classList.remove('aboutt');
+      doc.querySelector('.about').classList.remove('about-color');
       doc.querySelectorAll('.message').forEach(function (span) {
-        span.classList.remove('foo');
+        span.classList.remove('show-message');
       });
     };
 
     var closeAll = function () {
       var eventWrap = doc.querySelectorAll('.event-wrap');
       eventWrap.forEach(function (ele) {
-        ele.firstElementChild.classList.remove('active');
+        ele.firstElementChild.classList.remove('active', 'inactive');
       });
       toggleAnimations();
       
@@ -26,23 +26,31 @@
         case 'popAbout':
         case 'popContact':
           if (eventIs && eventIs !== eleId) {
-            doc.querySelector('.' + eventIs).classList.remove('active');
+            doc.querySelector('.' + eventIs).classList.replace('active', 'inactive');
             toggleAnimations();
           }
           if (!eventIs || true) {
-            doc.querySelector('.' + eleId).classList.toggle('active');
-            console.log(eventIs, eleId);
+            var element = doc.querySelector('.' + eleId);
+
+            if (element.classList.contains('active')) {
+              element.classList.replace('active', 'inactive');
+            } 
+            else if (element.classList.contains('inactive')){
+              element.classList.replace('inactive', 'active');
+            } 
+            else {
+              element.classList.add('active');
+            }
+
             eventIs = eleId;
           }
           if (eleId === 'popMore') {
-            console.log(doc.querySelectorAll('.message'));
-            doc.querySelectorAll('.message').forEach(function(span){
-              span.classList.toggle('foo');
+            doc.querySelectorAll('.message').forEach(function(firstLetter){
+              firstLetter.classList.toggle('show-message');
             });
           }
           if(eleId === 'popAbout') {
-            console.log('about', eleId);
-            doc.querySelector('.about').classList.toggle('aboutt')
+            doc.querySelector('.about').classList.toggle('about-color');
           }
           break;
         default:
@@ -53,13 +61,9 @@
 
     return function (ele) {
       if (ele) buttonToggle(ele);
-      if (ele === 'popMore') console.log('do additional animation');
-      if (ele === 'popAbout') console.log('do additional animation');
       if (ele === '') closeAll(ele);
-    }
+    };
   })(document);
 
-  document.addEventListener('click', function (e) { app(e.target.id); 
-    // console.log(e);
-  }, false);
+  document.addEventListener('click', function (e) { app(e.target.id); }, false);
 })();
