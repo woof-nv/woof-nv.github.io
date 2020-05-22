@@ -222,10 +222,17 @@ body {
 /* media query */
 
 @media screen and (max-width: 400px) {
+  /* html, .bth {
+    font-size: 8px;
+  } */
+  html{
+    height: 100vh;
+  }
+
   .container {
     min-width: 350px;
-    /* transform: scale(0.8); */
   }
+
 }
 
 @media screen and (min-width: 400px) and (max-width: 900px) {
