@@ -10,7 +10,7 @@ html, .btn {
 
 body {
   background-color: #FFC25A;
-  height: 80%;
+  height: 100%;
   margin: 0;
   display: flex;
   align-items: center;
@@ -25,6 +25,7 @@ body {
   align-items: center;
   flex-direction: column;
   position: relative;
+  margin-bottom: 8%;
 }
 
 .pop-up-container {
@@ -223,10 +224,6 @@ body {
 @media screen and (max-width: 400px) {
   html, .btn {
     font-size: 7px;
-  }
-
-  .container {
-    min-width: 350px;
   }
 }
 
