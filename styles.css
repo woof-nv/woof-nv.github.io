@@ -14,8 +14,8 @@ body {
   height: 100%;
   margin: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 button {
@@ -30,12 +30,12 @@ button:focus {
 /* containers */
 
 .container {
+  font-family: monospace;
   display: flex;
   align-items: center;
   flex-direction: column;
-  font-family: monospace;
   position: relative;
-  margin-bottom: 5%;
+  margin-bottom: 8%;
 }
 
 .pop-up-container {
@@ -46,27 +46,27 @@ button:focus {
 }
 
 .nav {
+  background-color: #262730;
+  border: 3px solid #262730;
+  border-radius: 30px;
+  margin: 0.5em 0;
+  width: 110%;
   display: flex;
   justify-content: center;
-  border: 3px solid #262730;
-  background-color: #262730;
-  border-radius: 30px;
   z-index: 1;
-  width: 110%;
-  margin: 0.5em 0;
 }
 
 /* button styles */
 
 .btn {
-  display: inline-block;
-  font-family: monospace;
   background-color: #262730;
   border: none;
   color: #FFF9F0;
   cursor: pointer;
-  padding: 0.5em 0.5em;
+  display: inline-block;
+  font-family: monospace;
   outline: none;
+  padding: 0.5em 0.5em;
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
@@ -75,18 +75,18 @@ button:focus {
 }
 
 .btn:first-child {
-  border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
 }
 
 .btn:last-child {
-  border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
 .btn:focus {
-  outline: none;
   box-shadow: none;
+  outline: none;
 }
 
 /* pop up event styles */
@@ -103,28 +103,28 @@ button:focus {
 
 .popMore {
   background-color: #34698A;
-  text-align: center;
   color: #FFFD78;
   padding: 0.5rem 0.75rem;
-  bottom: -46%;
-  left: 27%;
+  text-align: center;
+  bottom: -9.5em;
+  left: 10.5em;
 }
 
 .popMore::before {
-  content: "";
-  position: absolute;
-  top: -22%;
-  left: 18%;
   border: 1rem solid;
   border-color: transparent transparent #34698A transparent;
+  content: "";
+  position: absolute;
+  top: -1.94em;
+  left: 2.9em;
 }
 
 /* popAbout */
 
 .about {
-  text-align: center;
   color: black;
   margin-bottom: 1.5em;
+  text-align: center;
   transition: color 0.5s ease-in;
 }
 
@@ -132,12 +132,11 @@ button:focus {
 .popAbout {
   display: block;
   content: "";
-  background-color: #001542;
   background-color: #1C334D;
   height: 76.5%;
   width: 106%;
   position: relative;
-  left: -3%;
+  left: -1.2em;
   z-index: -1;
 }
 
@@ -146,21 +145,21 @@ button:focus {
   border-color: #1C334D transparent transparent transparent;
   content: "";
   position: absolute;
-  bottom: -11.5%;
-  right: 33.5%;
+  bottom: -1.9em;
+  right: 13.9em;
 }
 
 /* popContact */
 
 .popContact {
-  color: black;
-  color: #477CB5;
-  background-color: #FFC233;
   background-color: #B8DAFF;
+  color: #477CB5;
   padding: 0.5rem 0.75rem;
-  width: 35%;
-  right: -10%;
-  bottom: 23.5%;
+  width: fit-content;
+  right: -3.3em;
+  bottom: 4.8em;
+  /* remove in future */
+  text-align: center;
 }
 
 .popContact a {
@@ -171,11 +170,10 @@ button:focus {
 .popContact::after {
   border: 1rem solid;
   border-color: #B8DAFF transparent transparent transparent;
-  /* border-color: black transparent transparent transparent; */
   content: "";
   position: absolute;
-  bottom: -31.8%;
-  right: 33%;
+  bottom: -1.9em;
+  right: 4.3em;
 }
 
 /* animations */
@@ -237,11 +235,6 @@ button:focus {
 @media screen and (max-width: 400px) {
   .container {
     transform: scale(0.8);
-  }
-
-  body {
-    height: 100vh;
-    margin: 0;
   }
 }
 
