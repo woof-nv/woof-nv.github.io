@@ -20,7 +20,7 @@
     };
     //controls button events.
     var buttonToggle = function (eleId) {
-      //cases are buttons.
+      //cases are button element id's.
       switch (eleId) {
         case 'popMore':
         case 'popAbout':
@@ -53,14 +53,14 @@
             eventIs = eleId;
           }
           if (eleId === 'popMore') {
-            //condition: popMore button event?
+            //condition: popMore button clicked?
             //if true: start animation for popMore
             doc.querySelectorAll('.message').forEach(function(firstLetter){
               firstLetter.classList.toggle('show-message');
             });
           }
           if(eleId === 'popAbout') {
-            //condition: popAbout button event?
+            //condition: popAbout button clicked?
             //if true: start animation for popAbout
             doc.querySelector('.about').classList.toggle('about-color');
           }
@@ -73,7 +73,7 @@
       //condition: element clicked has an id (is a button).
       //if true: toggle button.
       if (ele) buttonToggle(ele);
-      //condition: element clicked doesn't have an id (is not a button).
+      //condition: element clicked does not have an id (is not a button).
       //if true: reset app.
       if (ele === '') closeAll(ele);
     };
