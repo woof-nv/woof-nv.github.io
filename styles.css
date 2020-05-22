@@ -223,7 +223,7 @@ body {
 
 @media screen and (max-width: 400px) {
   html, .btn {
-    font-size: 7px;
+    font-size: 6px;
   }
 }
 
