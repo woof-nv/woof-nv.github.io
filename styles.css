@@ -2,7 +2,7 @@
 
 html{
   min-height: 100%;
-  height: 80%;
+  height: 100%;
 }
 
 html, .btn {
@@ -11,7 +11,7 @@ html, .btn {
 
 body {
   background-color: #FFC25A;
-  height: 100%;
+  height: 80%;
   margin: 0;
   display: flex;
   align-items: center;
@@ -26,7 +26,6 @@ body {
   align-items: center;
   flex-direction: column;
   position: relative;
-  margin-bottom: 8%;
 }
 
 .pop-up-container {
@@ -175,7 +174,7 @@ body {
 }
 
 .inactive {
-  animation: fade-out 6s forwards;
+  animation: fade-out 0.3s forwards;
 }
 
 .about-color {
@@ -224,7 +223,8 @@ body {
 
 @media screen and (max-width: 400px) {
   .container {
-    transform: scale(0.8);
+    min-width: 350px;
+    /* transform: scale(0.8); */
   }
 }
 
