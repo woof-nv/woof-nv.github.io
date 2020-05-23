@@ -1,6 +1,7 @@
-#
+# Has :
 
-CSS,
-HTML,
-Javascript
+* CSS
+* HTML
+* Javascript
+
 only.
